@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 type Point struct {
@@ -22,12 +21,11 @@ func (s Square) End() Point {
 }
 
 func (s Square) Perimeter() uint {
-	const squareEdgesCount = 4
-	return s.a * squareEdgesCount
+	return s.a * 4
 }
 
 func (s Square) Area() uint {
-	return uint(math.Pow(float64(s.a), float64(2)))
+	return s.a * s.a
 }
 
 func main() {
