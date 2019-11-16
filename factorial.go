@@ -4,6 +4,14 @@ import (
 	"fmt"
 )
 
+func calculateFactorial(i uint) (result uint) {
+	result = 1
+	for counter := uint(1); counter <= i; counter++ {
+		result *= counter
+	}
+	return
+}
+
 func main() {
 	/*
 		pay attention: i = -1 will throw overflow error
@@ -12,12 +20,4 @@ func main() {
 	for _, v := range factorialTestSet {
 		fmt.Println(fmt.Sprintf("%d! = %d", v, calculateFactorial(v)))
 	}
-}
-
-func calculateFactorial(i uint) (result uint) {
-	result = 1
-	for counter := uint(1); counter <= i; counter++ {
-		result *= counter
-	}
-	return
 }
