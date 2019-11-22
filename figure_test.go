@@ -38,7 +38,7 @@ func TestSquare_Area(t *testing.T) {
 	t.Run("", func(t *testing.T) {
 		got := s.Area()
 		if got != expected {
-			t.Errorf("got: %v expected: %v given radius: %v", got, expected, given)
+			t.Errorf("got: %v expected: %v given round: %v", got, expected, given)
 		}
 	})
 }
@@ -51,7 +51,7 @@ func TestSquare_Perimeter(t *testing.T) {
 	t.Run("", func(t *testing.T) {
 		got := s.Perimeter()
 		if got != expected {
-			t.Errorf("got: %v expected: %v given radius: %v", got, expected, given)
+			t.Errorf("got: %v expected: %v given round: %v", got, expected, given)
 		}
 	})
 }
