@@ -5,11 +5,11 @@ import (
 	"sort"
 )
 
-func Average(inputArray [4]int) float64 {
+func Average(inputArray []int) float64 {
 	return float64(CalculateSumOfArray(inputArray)) / float64(len(inputArray))
 }
 
-func CalculateSumOfArray(inputArray [4]int) (result int) {
+func CalculateSumOfArray(inputArray []int) (result int) {
 	for _, v := range inputArray {
 		result += v
 	}
@@ -17,7 +17,10 @@ func CalculateSumOfArray(inputArray [4]int) (result int) {
 }
 
 func Max(inputSlice []string) (maxString string) {
-	maxString = inputSlice[0]
+	if len(inputSlice) == 0 {
+		return ""
+	}
+
 	for _, v := range inputSlice {
 		if len(v) > len(maxString) {
 			maxString = v
