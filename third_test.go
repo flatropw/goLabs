@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-var testArrays = [4][4]int{
+var testArrays = [4][]int{
 	{1, 3, 5, 8},
 	{2, 4, 6, 8},
 	{33, 16, 18, 25},
@@ -43,10 +43,11 @@ var testLenSlices = [][]string{
 	{"bed", "table", "armchair"},
 	{"zebra", "elephant", "cat", "rhino"},
 	{"mouse", "keyboard", "trackpad", "touchbar"},
+	{},
 }
 
 func TestMax(t *testing.T) {
-	var expectedResults = []string{"three", "armchair", "elephant", "keyboard"}
+	var expectedResults = []string{"three", "armchair", "elephant", "keyboard", ""}
 	for k, v := range testLenSlices {
 		t.Run(fmt.Sprintf("%d:%v", k, v), func(t *testing.T) {
 			got := Max(testLenSlices[k])
