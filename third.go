@@ -21,7 +21,7 @@ func CalculateSumOfSlice(inputSlice []int) (result int) {
 
 func Max(inputSlice []string) (maxString string) {
 	if len(inputSlice) == 0 {
-		return ""
+		return
 	}
 
 	for _, v := range inputSlice {
