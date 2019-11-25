@@ -9,10 +9,10 @@ func Average(inputSlice []int) float64 {
 	if len(inputSlice) == 0 {
 		return 0
 	}
-	return float64(CalculateSumOfArray(inputSlice)) / float64(len(inputSlice))
+	return float64(CalculateSumOfSlice(inputSlice)) / float64(len(inputSlice))
 }
 
-func CalculateSumOfArray(inputSlice []int) (result int) {
+func CalculateSumOfSlice(inputSlice []int) (result int) {
 	for _, v := range inputSlice {
 		result += v
 	}

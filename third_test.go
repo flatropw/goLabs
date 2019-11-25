@@ -14,11 +14,11 @@ var testSlices = [][]int{
 	{},
 }
 
-func TestCalculateSumOfArray(t *testing.T) {
+func TestCalculateSumOfSlice(t *testing.T) {
 	var expectedResults = []int{17, 20, 92, 400, 0}
 	for k, v := range testSlices {
 		t.Run(fmt.Sprintf("%d:%v", k, v), func(t *testing.T) {
-			got := CalculateSumOfArray(v)
+			got := CalculateSumOfSlice(v)
 			if got != expectedResults[k] {
 				t.Errorf("got: %d expected: %d given: %v", got, expectedResults[k], v)
 			}
