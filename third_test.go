@@ -6,17 +6,17 @@ import (
 	"testing"
 )
 
-var testArrays = [4][]int{
+var testSlices = [][]int{
 	{1, 3, 5, 8},
 	{2, 4, 6, 8},
 	{33, 16, 18, 25},
 	{100, 100, 100, 100},
+	{},
 }
 
 func TestCalculateSumOfArray(t *testing.T) {
-	var expectedResults = []int{17, 20, 92, 400}
-
-	for k, v := range testArrays {
+	var expectedResults = []int{17, 20, 92, 400, 0}
+	for k, v := range testSlices {
 		t.Run(fmt.Sprintf("%d:%v", k, v), func(t *testing.T) {
 			got := CalculateSumOfArray(v)
 			if got != expectedResults[k] {
@@ -27,8 +27,8 @@ func TestCalculateSumOfArray(t *testing.T) {
 }
 
 func TestAverage(t *testing.T) {
-	var expectedResults = []float64{4.25, 5, 23, 100}
-	for k, v := range testArrays {
+	var expectedResults = []float64{4.25, 5, 23, 100, 0}
+	for k, v := range testSlices {
 		t.Run(fmt.Sprintf("%d:%v", k, v), func(t *testing.T) {
 			got := Average(v)
 			if got != expectedResults[k] {
