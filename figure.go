@@ -32,7 +32,3 @@ func (c Circle) Perimeter() float64 {
 func (c Circle) Area() float64 {
 	return math.Pi * math.Pow(c.radiusLength, 2)
 }
-
-func main() {
-
-}

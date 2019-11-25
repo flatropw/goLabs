@@ -41,7 +41,3 @@ func (p People) String() (result string) {
 func (p People) Sort() {
 	sort.Sort(p)
 }
-
-func main() {
-
-}
