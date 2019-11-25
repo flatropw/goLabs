@@ -5,12 +5,15 @@ import (
 	"sort"
 )
 
-func Average(inputArray []int) float64 {
-	return float64(CalculateSumOfArray(inputArray)) / float64(len(inputArray))
+func Average(inputSlice []int) float64 {
+	if len(inputSlice) == 0 {
+		return 0
+	}
+	return float64(CalculateSumOfArray(inputSlice)) / float64(len(inputSlice))
 }
 
-func CalculateSumOfArray(inputArray []int) (result int) {
-	for _, v := range inputArray {
+func CalculateSumOfArray(inputSlice []int) (result int) {
+	for _, v := range inputSlice {
 		result += v
 	}
 	return
