@@ -7,14 +7,12 @@ import (
 )
 
 func MyStrToInt(s string) (result int, err error) {
-	filteredString := Filter(s)
-	result, err = strconv.Atoi(filteredString)
+	result, err = strconv.Atoi(Filter(s))
 	return
 }
 
 func MyStrToInt2(s string) (result int, err error) {
-	filteredString := Filter(s)
-	_, err = fmt.Sscanf(filteredString, "%d", &result)
+	_, err = fmt.Sscanf(Filter(s), "%d", &result)
 	return
 }
 
@@ -26,15 +24,13 @@ func Filter(s string) (result string) {
 	return
 }
 
-func IsRealNegative(s string) (isRealNegative bool) {
-	isRealNegative = false
-
+func IsRealNegative(s string) bool {
 	minusIndexes := regexp.MustCompile("-").FindStringIndex(s)
 	numberIndexes := regexp.MustCompile("[0-9]").FindStringIndex(s)
 
 	if (len(minusIndexes) > 0 && len(numberIndexes) > 0) && (minusIndexes[0] < numberIndexes[0]) {
-		isRealNegative = true
+		return true
 	}
 
-	return
+	return false
 }
