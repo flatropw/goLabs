@@ -37,20 +37,6 @@ func TestMyStrToInt2(t *testing.T) {
 	}
 }
 
-func TestFilter(t *testing.T) {
-	for _, test := range tests {
-		result := Filter(test.given)
-		assert.Equal(t, test.filtered, result)
-	}
-}
-
-func TestIsRealNegative(t *testing.T) {
-	for _, test := range tests {
-		result := IsRealNegative(test.given)
-		assert.Equal(t, test.isNegative, result)
-	}
-}
-
 func BenchmarkMyStrToInt(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		MyStrToInt("-25fs25")
