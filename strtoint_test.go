@@ -8,17 +8,11 @@ import (
 var tests = []struct {
 	given      string
 	expected   int
-	isNegative bool
-	filtered   string
 }{
-	{"----346", -346, true, "-346"},
-	{"100", 100, false, "100"},
-	{"abcdf-55-55+12", -555512, true, "-555512"},
-	{"-0", -0, true, "-0"},
-	{"3-0", 30, false, "30"},
-	{"01👨‍💻25", 125, false, "0125"},
-	{"ћћыƒџј01👨‍💻25", 125, false, "0125"},
-	{"-0-1", -1, true, "-01"},
+	{"-346", -346},
+	{"250", 250},
+	{"1080", 1080},
+
 }
 
 func TestMyStrToInt(t *testing.T) {
