@@ -5,9 +5,8 @@ import (
 	"strconv"
 )
 
-func MyStrToInt(s string) (result int, err error) {
-	result, err = strconv.Atoi(s)
-	return
+func MyStrToInt(s string) (int, error) {
+	return strconv.Atoi(s)
 }
 
 func MyStrToInt2(s string) (result int, err error) {
