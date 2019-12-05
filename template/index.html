@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, bakersrv!</title>
+    <style>
+        body, html {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <form method="POST" class="col-sm-6" role="form">
+            <div class="jumbotron">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="address">E-mail address:</label>
+                    <input type="email" class="form-control" id="address" name="address">
+                </div>
+
+                <div class="form-group">
+                    <label for="token">Token:</label>
+                    <input type="text" class="form-control" id="token" readonly>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    const tokenField = document.querySelector("#token");
+    let token = document.cookie.split(';').filter((item) => item.trim().startsWith('token='))[0];
+    tokenField.value = token.replace('token=', '');
+</script>
+</body>
+</html>
