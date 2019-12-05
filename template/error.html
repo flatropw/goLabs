@@ -28,8 +28,8 @@
                 <h1 class="status-code-block">
                     Oops! {{ .StatusCode}}</h1>
                 <h4>
-                    {{ .Text}} </h4>
-
+                    {{ .Text}}
+                </h4>
                 <div class="error-actions">
                     <a href="/" class="btn btn-primary">Home</a>
                     <a href="https://github.com/flatropw" class="btn btn-secondary">GitHub</a>
@@ -39,11 +39,5 @@
 
     </div>
 </div>
-
-<script type="text/javascript">
-    const tokenField = document.querySelector("#token");
-    let token = document.cookie.split(';').filter((item) => item.trim().startsWith('token='))[0];
-    tokenField.value = token.replace('token=', '');
-</script>
 </body>
 </html>
