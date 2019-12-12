@@ -17,7 +17,7 @@ func main() {
 
 		fmt.Print("Request:")
 
-		text, err := reader.ReadString(config.delimiter)
+		text, err := reader.ReadString(delimiter)
 		if err != nil {
 			if err != io.EOF {
 				fmt.Println(err)
@@ -25,18 +25,18 @@ func main() {
 			break
 		}
 
-		text = strings.TrimSuffix(text, string(config.delimiter))
+		text = strings.TrimSuffix(text, string(delimiter))
 		if text == config.exitPhrase {
 			break
 		}
 
-		_, err = fmt.Fprintf(connection, text+string(config.delimiter))
+		_, err = fmt.Fprintf(connection, text+string(delimiter))
 
 		if err != nil {
 			fmt.Println(err)
 		}
 
-		message, err := bufio.NewReader(connection).ReadString(config.delimiter)
+		message, err := bufio.NewReader(connection).ReadString(delimiter)
 
 		if err != nil {
 			fmt.Println(err)

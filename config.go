@@ -11,5 +11,6 @@ var config = configList{
 	address:    "127.0.0.1",
 	port:       "8081",
 	exitPhrase: "exit",
-	delimiter:  '\n',
 }
+
+const delimiter = '\n'

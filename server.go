@@ -25,17 +25,16 @@ func main() {
 	defer connection.Close()
 
 	for {
-		message, err := bufio.NewReader(connection).ReadString(config.delimiter)
+		message, err := bufio.NewReader(connection).ReadString(delimiter)
 		if err != nil {
 			if err != io.EOF {
 				fmt.Println(err)
 			}
 			break
-
 		}
 
 		var response string
-		message = strings.TrimSuffix(message, string(config.delimiter))
+		message = strings.TrimSuffix(message, string(delimiter))
 
 		if len(message) > 0 {
 			response, err = MultiplyIfInt(message)
@@ -46,7 +45,7 @@ func main() {
 			response = "Message can not be empty."
 		}
 
-		_, err = connection.Write([]byte(response + string(config.delimiter)))
+		_, err = connection.Write([]byte(response + string(delimiter)))
 		if err != nil {
 			fmt.Println(err)
 			break

@@ -16,11 +16,9 @@ var tests = []struct {
 	{"-0.1", "-0.1"},
 }
 
-
 func TestMultiplyIfInt(t *testing.T) {
 	for _, test := range tests {
 		result, _ := MultiplyIfInt(test.given)
 		assert.Equal(t, test.expected, result)
 	}
 }
-
