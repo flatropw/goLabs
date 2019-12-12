@@ -26,7 +26,7 @@ func main() {
 		}
 
 		text = strings.TrimSuffix(text, string(delimiter))
-		if text == config.exitPhrase {
+		if text == exitPhrase {
 			break
 		}
 
