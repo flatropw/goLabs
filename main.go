@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"net/url"
@@ -26,7 +27,7 @@ func main() {
 				QueryParams: r.URL.Query(),
 			}, "", "    ")
 		if err != nil {
-			panic(err)
+			fmt.Println(err)
 		}
 		_, err = w.Write(jsonVisitorData)
 	})
