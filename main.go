@@ -27,7 +27,8 @@ func main() {
 				QueryParams: r.URL.Query(),
 			}, "", "    ")
 		if err != nil {
-			fmt.Println(err)
+			w.WriteHeader(http.StatusInternalServerError)
+			_, err = w.Write([]byte(err.Error()))
 		}
 		_, err = w.Write(jsonVisitorData)
 	})
