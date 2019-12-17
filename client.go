@@ -3,15 +3,18 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"io"
 	"net"
 	"os"
 	"strings"
 )
 
 func main() {
-	connection, _ := net.Dial("tcp", config.address+":"+config.port)
+	connection, err := net.Dial("tcp", config.address+":"+config.port)
+	if err != nil {
+		fmt.Println(err)
+	}
 	defer connection.Close()
+
 	for {
 		reader := bufio.NewReader(os.Stdin)
 
@@ -19,9 +22,7 @@ func main() {
 
 		text, err := reader.ReadString(delimiter)
 		if err != nil {
-			if err != io.EOF {
 				fmt.Println(err)
-			}
 			break
 		}
 
