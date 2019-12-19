@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
+	"github.com/burov/task_databases/pkg/repository/postgres"
 	"log"
 
 	"github.com/burov/task_databases/pkg/model"
-	"github.com/burov/task_databases/pkg/repository/memory"
 )
 
 const (
@@ -19,7 +19,11 @@ const (
 )
 
 func main() {
-	repository := memory.NewContactsRepositoryInMemory()
+	db, err := postgres.Connect()
+	if err != nil {
+		log.Println(err)
+	}
+	repository := postgres.NewContactsRepositoryPostgres(db)
 
 	for {
 		fmt.Print(menu)
